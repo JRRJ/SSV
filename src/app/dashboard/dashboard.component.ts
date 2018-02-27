@@ -12,7 +12,8 @@ export class DashboardComponent implements OnInit {
   constructor(private exoplanetService: ExoplanetService) { }
 
   ngOnInit() {
-    this.systems = this.exoplanetService.getSystemNames();
+    this.exoplanetService.getSystemNames()
+      .subscribe(systems => this.systems = systems);
   }
 
 }
