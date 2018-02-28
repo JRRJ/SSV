@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   constructor(private exoplanetService: ExoplanetService) { }
 
   ngOnInit() {
-    this.exoplanetService.getSystemNames()
+    this.exoplanetService.getSystemNames().first()
       .subscribe(systems => this.systems = systems);
   }
 

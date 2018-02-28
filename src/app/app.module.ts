@@ -8,6 +8,7 @@ import { ExoplanetService } from './exoplanet.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SystemComponent } from './system/system.component';
+import { ExoplanetApiService } from './exoplanet-api.service';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SystemComponent } from './system/system.component';
     HttpClientModule
   ],
   providers: [
-    ExoplanetService
+    ExoplanetService,
+    ExoplanetApiService
   ],
   bootstrap: [AppComponent]
 })

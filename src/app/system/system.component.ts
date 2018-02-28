@@ -17,7 +17,6 @@ export class SystemComponent implements OnInit {
 
   private getName(): void {
     this.name = this.route.snapshot.paramMap.get('name');
-    console.log(this.route)
   }
 
 }
