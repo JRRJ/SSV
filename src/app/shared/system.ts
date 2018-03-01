@@ -1,4 +1,5 @@
 export class SystemOverview {
   name: string;
-  planets: number;
+  planetCount: number;
+  spectralType: string;
 }

@@ -1,5 +1,7 @@
 <ul>
   <li *ngFor="let system of systems">
-    <a routerLink="/system/{{system}}">{{system}}</a>
+    <a routerLink="/system/{{system.name}}">
+      {{system.name}} | {{system.planetCount}} planet{{system.planetCount > 1 ? 's' : ''}}
+    </a>
   </li>
 </ul>

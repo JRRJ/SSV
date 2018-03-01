@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ExoplanetService } from '../exoplanet.service';
+import { ExoplanetService } from './../exoplanet.service';
+
+import 'rxjs/add/operator/first';
+
+import { SystemOverview } from './../shared/system';
 
 @Component({
   selector: 'ssv-dashboard',
@@ -7,12 +11,12 @@ import { ExoplanetService } from '../exoplanet.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  private systems: string[];
+  private systems: SystemOverview[];
 
   constructor(private exoplanetService: ExoplanetService) { }
 
   ngOnInit() {
-    this.exoplanetService.getSystemNames().first()
+    this.exoplanetService.getSystemList().first()
       .subscribe(systems => this.systems = systems);
   }
 
