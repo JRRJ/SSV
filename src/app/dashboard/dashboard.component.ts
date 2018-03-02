@@ -3,7 +3,7 @@ import { ExoplanetService } from './../exoplanet.service';
 
 import 'rxjs/add/operator/first';
 
-import { SystemOverview } from './../shared/system';
+import { SystemOverview } from './../shared/systemOverview';
 
 @Component({
   selector: 'ssv-dashboard',

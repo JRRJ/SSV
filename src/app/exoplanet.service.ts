@@ -8,7 +8,7 @@ import { map, tap } from 'rxjs/operators';
 import 'rxjs/add/operator/map';
 
 import { ExoplanetApiService } from './exoplanet-api.service';
-import { SystemOverview } from './shared/system';
+import { SystemOverview } from './shared/systemOverview';
 
 @Injectable()
 export class ExoplanetService {

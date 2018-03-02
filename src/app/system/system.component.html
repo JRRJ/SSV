@@ -1,6 +1,11 @@
 <p>
-  system works!
-</p>
-<p>
   welcome to {{name}}
 </p>
+<ol>
+  <li *ngFor="let planet of planets">
+    {{planet.pl_hostname}} {{planet.pl_letter}} | 
+    Mass: {{planet.pl_bmassj * 330 | number:'1.1-1'}} |
+    Radius: {{planet.pl_radj * 10 | number:'1.1-1'}} |  
+    Zone: {{planet.pl_orbsmax * 10 | number:'1.1-1'}}
+  </li>
+</ol>
