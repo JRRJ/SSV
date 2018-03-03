@@ -1,4 +1,11 @@
-
+export interface Planet {
+    name: string;
+    period: number;
+    semiMajorAxis: number;
+    mass: number;
+    radius: number;
+    temperature: number;
+}
 /*
 //example api response object, main fields only
 {

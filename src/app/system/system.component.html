@@ -1,11 +1,22 @@
 <p>
   welcome to {{name}}
 </p>
+<div *ngIf="system.star">
+  {{system.star.name}}<br>
+  Mass: {{system.star.mass}}<br>
+  Radius: {{system.star.radius}}<br>
+  Temperature: {{system.star.temperature}}<br>
+  Luminosity: {{system.star.luminosity | number:'1.1-5'}}<br>
+  <br>
+</div>
+planets:
 <ol>
-  <li *ngFor="let planet of planets">
-    {{planet.pl_hostname}} {{planet.pl_letter}} | 
-    Mass: {{planet.pl_bmassj * 330 | number:'1.1-1'}} |
-    Radius: {{planet.pl_radj * 10 | number:'1.1-1'}} |  
-    Zone: {{planet.pl_orbsmax * 10 | number:'1.1-1'}}
+  <li *ngFor="let planet of system.planets">
+    {{planet.name}} | 
+    Mass: {{planet.mass | number:'1.1-1'}} |
+    Radius: {{planet.radius | number:'1.1-1'}} |  
+    Period: {{planet.period | number:'1.1-1'}} |
+    Distance: {{planet.semiMajorAxis | number:'1.1-3'}} |
+    Temperature: {{planet.temperature | number:'1.0-0'}}
   </li>
 </ol>

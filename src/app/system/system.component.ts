@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { PlanetModel } from './../api-models/planetModel';
-import { ExoplanetApiService } from './../exoplanet-api.service';
+import { ExoplanetService } from './../exoplanet.service';
+import { SystemDetails } from '../shared/systemDetails';
 
 @Component({
   selector: 'ssv-system',
@@ -11,16 +12,16 @@ import { ExoplanetApiService } from './../exoplanet-api.service';
 })
 export class SystemComponent implements OnInit {
   @Input() name: string;
-  private planets: PlanetModel[];
+  private system: SystemDetails = {star: null, planets: []};
 
   constructor(
-    private exoplanetApiService: ExoplanetApiService,
+    private exoplanetService: ExoplanetService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getName();
-    this.exoplanetApiService.getPlanets(this.name)
-      .subscribe(planets => this.planets = planets);
+    this.exoplanetService.getSystemDetails(this.name)
+      .subscribe(system => this.system = system);
   }
 
   private getName(): void {
