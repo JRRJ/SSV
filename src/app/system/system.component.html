@@ -2,6 +2,8 @@
   welcome to {{name}}
 </p>
 <div *ngIf="system.star">
+  <ssv-system-display [system]="system"></ssv-system-display>
+  <br>
   {{system.star.name}}<br>
   Mass: {{system.star.mass}}<br>
   Radius: {{system.star.radius}}<br>

@@ -62,7 +62,7 @@ export class ExoplanetService {
         period: planetModel.pl_orbper,
         semiMajorAxis: planetModel.pl_orbsmax,
         mass: planetModel.pl_bmassj * 318,
-        radius: planetModel.pl_radj * 10.97,
+        radius: planetModel.pl_radj ? planetModel.pl_radj * 10.97 : this.planetMassToRadius(planetModel.pl_bmassj * 318),
         temperature: this.calculatePlanetTemperature(star.luminosity, planetModel.pl_orbsmax)
       };
       planets.push(planet);
@@ -82,5 +82,12 @@ export class ExoplanetService {
   private calculatePlanetTemperature(starLuminosity: number, distance: number): number|null {
     if (!starLuminosity || !distance) { return null; }
     return 277 * (starLuminosity ** 0.25) * ((1 / distance) ** 0.5);
+  }
+
+  // see Chen & Kipping 2016 arXiv:1603.08614v2
+  private planetMassToRadius(mass: number): number {
+    if (mass < 2) { return mass ** 0.279; }
+    if (mass < 130) { return mass ** 0.59; }
+    return 21.89 * (mass ** -0.044);
   }
 }
