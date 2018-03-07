@@ -1,1 +1,3 @@
 <svg:circle [attr.cx]="planet.xPosition" cy="100" [attr.r]="planet.radiusPixels" [attr.fill]="planet.colorRGB" />
+<svg:text [attr.x]="planet.xPosition" [attr.y]="95 - planet.radiusPixels"
+text-anchor="middle" font-family="Verdana" font-size="11" stroke="#333">{{planet.name}}</svg:text>

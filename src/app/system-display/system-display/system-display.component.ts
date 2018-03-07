@@ -27,7 +27,8 @@ export class SystemDisplayComponent implements OnInit {
       const displayPlanet: DisplayPlanet = {
         radiusPixels: pixelRadius,
         xPosition: position,
-        colorRGB: planet.temperature ? this.colorTemp(planet.temperature) : '#BBB'
+        colorRGB: planet.temperature ? this.colorTemp(planet.temperature) : '#BBB',
+        name: planet.name.slice(-1)
       };
       x = position + pixelRadius;
       // console.log(pix)
