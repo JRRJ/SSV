@@ -1,3 +1,10 @@
 <svg width="800px" height="200px" viewBox="0 0 800 200">
   <svg:g *ngFor="let planet of planets" ssv-planet-display [planet]="planet"/>
+
+  <svg:circle cx="20" 
+    [attr.cy]="planets[0].radiusPixels + 116" 
+    r="5" stroke="#9BF" stroke-width="2" fill="white"/>  
+  <text x="28" 
+    [attr.y]="planets[0].radiusPixels + 120" 
+    font-family="Verdana" font-size="10" stroke="#9BF">Earth</text>
 </svg>
