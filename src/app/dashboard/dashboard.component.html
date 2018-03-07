@@ -1,3 +1,11 @@
+<div style="text-align:center">
+  <h1>
+    Exoplanetary Systems
+  </h1>
+</div>
+<div *ngIf="systems.length === 0">
+  Loading system list...
+</div>
 <ul>
   <li *ngFor="let system of systems">
     <a routerLink="/system/{{system.name}}">

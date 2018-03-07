@@ -1,24 +1,24 @@
-<p>
-  welcome to {{name}}
-</p>
+<h2>
+  {{name}}
+</h2>
 <div *ngIf="system.star">
   <ssv-system-display [system]="system"></ssv-system-display>
   <br>
-  {{system.star.name}}<br>
-  Mass: {{system.star.mass}}<br>
-  Radius: {{system.star.radius}}<br>
-  Temperature: {{system.star.temperature}}<br>
-  Luminosity: {{system.star.luminosity | number:'1.1-5'}}<br>
+  <strong>Star: {{system.star.name}}</strong><br>
+  Mass: {{system.star.mass}} M<sub>☉</sub><br>
+  Radius: {{system.star.radius}} R<sub>☉</sub><br>
+  Temperature: {{system.star.temperature}} K<br>
+  Luminosity: {{system.star.luminosity | number:'1.1-5'}} L<sub>☉</sub><br>
   <br>
 </div>
-planets:
+Planets:
 <ol>
   <li *ngFor="let planet of system.planets">
-    {{planet.name}} | 
-    Mass: {{planet.mass | number:'1.1-1'}} |
-    Radius: {{planet.radius | number:'1.1-1'}} |  
-    Period: {{planet.period | number:'1.1-1'}} |
-    Distance: {{planet.semiMajorAxis | number:'1.1-3'}} |
-    Temperature: {{planet.temperature | number:'1.0-0'}}
+    <strong>{{planet.name}}</strong> | 
+    Mass: {{planet.mass | number:'1.1-1'}} M<sub>🜨</sub> |
+    Radius: {{planet.radius | number:'1.1-1'}} R<sub>🜨</sub> |  
+    Period: {{planet.period | number:'1.1-1'}} days |
+    Distance: {{planet.semiMajorAxis | number:'1.1-3'}} AU |
+    Temperature: {{planet.temperature | number:'1.0-0'}} K
   </li>
 </ol>
