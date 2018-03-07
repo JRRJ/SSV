@@ -36,8 +36,8 @@ export class SystemDisplayComponent implements OnInit {
   }
 
   private colorTemp(temperature: number): string {
-    const red = Math.min(255, Math.max(temperature - 300, 0));
-    const blue = Math.max(255 - temperature, 0);
+    const red = Math.floor(Math.min(255, Math.max(temperature - 300, 0)));
+    const blue = Math.floor(Math.max(255 - temperature, 0));
     const green = Math.floor(Math.max(0, 255 - 2 * Math.abs(300 - temperature)));
     return `rgb(${red},${green},${blue})`;
   }
