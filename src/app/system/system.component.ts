@@ -12,7 +12,7 @@ import { SystemDetails } from '../shared/systemDetails';
 })
 export class SystemComponent implements OnInit {
   @Input() name: string;
-  private system: SystemDetails = {star: null, planets: []};
+  system: SystemDetails = {star: null, planets: []};
 
   constructor(
     private exoplanetService: ExoplanetService,

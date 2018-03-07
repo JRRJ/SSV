@@ -11,7 +11,7 @@ import { SystemOverview } from './../shared/systemOverview';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  private systems: SystemOverview[];
+  systems: SystemOverview[];
 
   constructor(private exoplanetService: ExoplanetService) { }
 
